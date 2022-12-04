@@ -1,0 +1,14 @@
+/* Elements */
+/* Utility classes */
+.primary-color {
+	background-color: brown;
+}
+.secondary-color {
+	background-color: brown;
+}
+.accent-color {
+	background-color: brown;
+}
+.cursor-pointer{
+    cursor: pointer;
+}
