@@ -9,3 +9,4 @@ to learn about with this project:
 - Ensuring the methods and variables are private
 - Using animations on load
 - Using tailwind
+- Making the site responsive with or without media queries.
