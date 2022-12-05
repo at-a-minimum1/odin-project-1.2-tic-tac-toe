@@ -7,9 +7,51 @@
 		<title>Tic Tac Toe</title>
 		<link rel="stylesheet" href="styles.css" />
 	</head>
-	<body>
+
+	<body class="primary-color">
+		<div>
+			<h3 id="player">Player:</h3>
+			<h3 id="computer">Computer:</h3>
+		</div>
+
 		<div class="game-board-wrapper">
-			<div class="game-space"></div>
+			<div class="game-board" id="gameBoard">
+				<!-- x's and o's to be put into the button's innerHTML -->
+                <button class="location00 accent-color cursor-pointer" id="location00">
+					
+				</button>
+				<button class="location01 accent-color cursor-pointer" id="location01">
+					
+				</button>
+				<button class="location02 accent-color cursor-pointer" id="location02">
+					
+				</button>
+
+				<button
+					class="location10 accent-color cursor-pointer"
+					id="location10"
+				></button>
+				<button
+					class="location11 accent-color cursor-pointer"
+					id="location11"
+				></button>
+				<button
+					class="location12 accent-color cursor-pointer"
+					id="location12"
+				></button>
+				<button
+					class="location20 accent-color cursor-pointer"
+					id="location20"
+				></button>
+				<button
+					class="location21 accent-color cursor-pointer"
+					id="location21"
+				></button>
+				<button
+					class="location22 accent-color cursor-pointer"
+					id="location22"
+				></button>
+			</div>
 		</div>
 		<script src="app.js"></script>
 	</body>

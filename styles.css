@@ -1,14 +1,46 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
 /* Elements */
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-top: 2rem;
+}
+button {
+	width: 150px;
+	height: 150px;
+	box-shadow: 0px 3px #955896b9;
+	font-size: 100px;
+}
+button:hover {
+	background-color: #f391f4;
+}
+button:active {
+	background-color: #ff40c9;
+}
+
 /* Utility classes */
 .primary-color {
-	background-color: brown;
+	background-color: #fff1fb;
 }
 .secondary-color {
 	background-color: brown;
 }
 .accent-color {
-	background-color: brown;
+	background-color: #db81dc;
 }
-.cursor-pointer{
-    cursor: pointer;
+.cursor-pointer {
+	cursor: pointer;
+}
+/* Wrapper */
+.game-board {
+	margin-top: 2rem;
+	display: grid;
+	grid-template-columns: repeat(3, 150px);
+	gap: 35px;
 }
