@@ -8,8 +8,8 @@ let gameBoard = [
 	[{ value: "7" }, { value: "8" }, { value: "9" }],
 ];
 function resetGame() {
-	document.getElementById("player").innerHTML = `Player: ${playerScore}`;
-	document.getElementById("computer").innerHTML = `Computer: ${cpuScore}`;
+	document.getElementById("player").innerHTML = `Player One: ${playerScore}`;
+	document.getElementById("computer").innerHTML = `Player Two: ${cpuScore}`;
 	gameBoard = [
 		[{ value: "1" }, { value: "2" }, { value: "3" }],
 		[{ value: "4" }, { value: "5" }, { value: "6" }],
@@ -45,22 +45,62 @@ function switchPlayer() {
 	}
 }
 function isGameOver() {
-	// Check rows
 	for (i = 0; i < 3; i++) {
+		// Check rows for winner
 		if (
 			gameBoard[i][0].value == gameBoard[i][1].value &&
 			gameBoard[i][1].value == gameBoard[i][2].value
 		) {
-			if (isPlayerOne) {
-				alert("Player Wins the Round!");
-				playerScore++;
-			} else {
-				alert("Computer Wins the Round!");
-				cpuScore++;
-			}
-
+			updateScore();
+		}
+		// Check columns for winner
+		if (
+			gameBoard[0][i].value == gameBoard[1][i].value &&
+			gameBoard[1][i].value == gameBoard[2][i].value
+		) {
+			updateScore();
+		}
+		// Check diagonals for winner
+		if (
+			gameBoard[0][0].value == gameBoard[1][1].value &&
+			gameBoard[1][1].value == gameBoard[2][2].value
+		) {
+			updateScore();
+		}
+		if (
+			gameBoard[0][2].value == gameBoard[1][1].value &&
+			gameBoard[1][1].value == gameBoard[2][0].value
+		) {
+			updateScore();
+		}
+		// Check to see if it is a draw
+		if (Array.from(document.getElementsByClassName("active")).length == 9) {
+			alert("It's a draw!");
 			resetGame();
-			console.log("Game Over");
 		}
 	}
+}
+
+function updateScore() {
+	if (isPlayerOne) {
+		playerScore++;
+		if (playerScore == 3) {
+			playerScore = 0;
+			cpuScore = 0;
+			alert("Player One Wins the Game!");
+		} else {
+			alert("Player One Wins the Round!");
+		}
+	} else {
+		cpuScore++;
+		if (cpuScore == 3) {
+			playerScore = 0;
+			cpuScore = 0;
+			alert("Player Two Wins the Game!");
+		} else {
+			alert("Player Two Wins the Round!");
+		}
+	}
+
+	resetGame();
 }
