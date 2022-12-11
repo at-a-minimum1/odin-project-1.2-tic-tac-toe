@@ -17,9 +17,9 @@ button {
 	box-shadow: 0px 3px #955896b9;
 	font-size: 100px;
 }
-button:hover {
+/* button:hover {
 	background-color: #f391f4;
-}
+} */
 
 
 /* Utility classes */
